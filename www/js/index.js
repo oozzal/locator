@@ -17,6 +17,7 @@ var app = {
   // Check if necessary hardwares/settings are present
   setup: function() {
     if(typeof bluetoothSerial !== 'undefined') $(document).trigger('bluetoothready');
+    $("#scan").on("click", this.listDevices);
   },
   // deviceready Event Handler
   //
@@ -30,6 +31,19 @@ var app = {
   onBluetoothReady: function() {
     $("#bluetoothready>.listening").css("display", "none");
     $("#bluetoothready>.received").css("display", "block");
+  },
+  // lists paired bluetooth devices
+  listDevices: function() {
+    bluetoothSerial.list(
+      function(devices) {
+        devices.forEach(function(device) {
+          alert(device.address);
+        })
+      },
+      function() {
+        alert("no device found");
+      }
+    );
   }
 };
 
