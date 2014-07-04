@@ -1,4 +1,4 @@
-// var bluetoothSerial = cordova.require('bluetoothSerial');
+var bluetoothSerial = cordova.require('com.megster.cordova.bluetoothserial.bluetoothSerial');
 
 var app = {
   // Application Constructor
@@ -16,7 +16,7 @@ var app = {
   },
   // Check if necessary hardwares/settings are present
   setup: function() {
-    if(true) $(document).trigger('bluetoothready');
+    if(typeof bluetoothSerial !== 'undefined') $(document).trigger('bluetoothready');
   },
   // deviceready Event Handler
   //
