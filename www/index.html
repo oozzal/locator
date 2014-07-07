@@ -11,19 +11,27 @@
 </head>
 <body>
   <div class="app">
-    <h1>PhoneGap</h1>
+    <h1>UzzGap V2.0</h1>
     <div id="deviceready" class="blink">
       <p class="event listening">Connecting to Device</p>
       <p class="event received">Device is Ready, howdy!</p>
     </div>
     <hr/>
-    <div id="bluetoothready" class="blink">
-      <p class="event listening">Waiting for Bluetooth</p>
-      <p class="event received">Bluetooth is up and running master!</p>
+    <div id="bluetooth">
+      <div id="bluetoothready" class="blink">
+        <p class="event listening">Waiting for Bluetooth</p>
+        <p class="event received">Bluetooth is up and running master!</p><br>
+        <button id="enable-bluetooth">Enable Bluetooth</button><br>
+        <button id="disable-bluetooth">Disable Bluetooth</button><br>
+      </div>
+      <div id="discovery">
+        <button id="start-discovery">Start Discovery</button>
+        <div id="devices-list"></div>
+      </div>
     </div>
   </div>
   <script type="text/javascript" src="cordova.js"></script>
-  <!-- <script type="text/javascript" src="js/bluetoothSerial.js"></script> -->
+  <script type="text/javascript" src="js/bluetooth.js"></script>
   <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript">
