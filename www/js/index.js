@@ -63,12 +63,13 @@ var app = {
   },
   // start devices discovery
   startDiscovery: function() {
-    alert("discovery started" + app.isBluetothEnabled);
+    var t1 = new Date();
+    $("#bluetooth #discovery").prepend("Discovery Started<br />");
     window.bluetooth.startDiscovery(
       function(device) {
-        $("#bluetooth #devices-list").append(device.name + " => " + device.address + "<br/ ");
+        $("#bluetooth #devices-list").append("<li>" + device.name + "@" + device.address + "</li>");
       },
-      function() { alert("done discovery"); }
+      function() { $("#bluetooth #discovery").append("<br />Discovery Finished in " + (new Date() - t1)/1000 + " seconds"); }
     );
   }
 };
