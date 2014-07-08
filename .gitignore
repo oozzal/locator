@@ -2,3 +2,4 @@
 /merges/*
 /hooks/*
 /cordova/*
+*.DS_Store
