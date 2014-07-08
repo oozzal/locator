@@ -7,9 +7,9 @@
         "files": {
             "res/xml/config.xml": {
                 "parents": {
-                    "/widget": [
+                    "/*": [
                         {
-                            "xml": "<feature name=\"BluetoothSerial\"><param name=\"android-package\" value=\"com.megster.cordova.BluetoothSerial\" /></feature>",
+                            "xml": "<feature name=\"Bluetooth\"><param name=\"android-package\" value=\"org.apache.cordova.bluetooth.BluetoothPlugin\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -32,7 +32,7 @@
         }
     },
     "installed_plugins": {
-        "com.megster.cordova.bluetoothserial": {
+        "com.phonegap.plugins.bluetooth": {
             "PACKAGE_NAME": "com.oozzal.locator"
         }
     },
